@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kunta Kunte Restaurant</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#111;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#ffb347;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* HERO SECTION */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    color:white;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+    ),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.45);
+    padding:40px;
+    border-radius:15px;
+    max-width:750px;
+    width:90%;
+}
+
+/* STYLED HEADING */
+
+.hero h1{
+    font-size:clamp(3rem,7vw,6rem);
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    line-height:1.1;
+    margin-bottom:20px;
+    color:#ffffff;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.3),
+    0 0 20px rgba(255,165,0,0.5),
+    4px 4px 12px rgba(0,0,0,0.8);
+
+    animation:fadeInDown 1.5s ease-out;
+}
+
+.hero h1 span{
+    display:block;
+    font-size:0.45em;
+    letter-spacing:12px;
+    margin-top:12px;
+    color:#ffb347;
+
+    text-shadow:
+    0 0 10px rgba(255,179,71,0.8),
+    0 0 20px rgba(255,179,71,0.6);
+}
+
+@keyframes fadeInDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    background:#ff8c00;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:5px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ffb347;
+}
+
+#status{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+section h2{
+    margin-bottom:20px;
+    color:#222;
+}
+
+/* FEATURED MEALS */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    width:280px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    background:white;
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:15px 0;
+}
+
+.card p{
+    padding:0 15px 20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* MOBILE */
+
+.show{
+    display:flex !important;
+}
+
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:75px;
+        right:20px;
+        background:#111;
+        padding:20px;
+        border-radius:10px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .card{
+        width:100%;
+        max-width:350px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+Kunta Kunte Restaurant
+</div>
+
+<button class="menu-btn">☰</button>
+
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+KUNTA KUNTE
+<span>RESTAURANT</span>
+</h1>
+
+<p>
+Authentic Taste • Great Food • Great Experience
+</p>
+
+<p id="status"></p>
+
+<a href="contact.html" class="btn">
+Reserve Table
+</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>About Us</h2>
+
+<p>
+Kunta Kunte Restaurant offers delicious local and international dishes,
+excellent customer service, and an unforgettable dining experience.
+</p>
+
+</section>
+
+<section>
+
+<h2>Featured Meals</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Local Cuisine">
+<h3>Local Cuisine</h3>
+<p>Fresh traditional meals prepared daily.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1" alt="Chef Specials">
+<h3>Chef Specials</h3>
+<p>Signature dishes prepared by our experienced chefs.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd" alt="Grilled Pork">
+<h3>Grilled Meals</h3>
+<p>Perfectly grilled meals with rich smoky flavor.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Desserts and Drinks">
+<h3>Desserts & Drinks</h3>
+<p>Refreshing beverages and sweet desserts.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>Kunta Kunte Restaurant © 2026</p>
+
+</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const menuBtn=document.querySelector(".menu-btn");
+const navLinks=document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click",function(){
+navLinks.classList.toggle("show");
+});
+
+const status=document.getElementById("status");
+const hour=new Date().getHours();
+
+if(hour>=8 && hour<=22){
+status.textContent="🟢 We Are OPEN";
+}
+else{
+status.textContent="🔴 We Are CLOSED";
+}
+
+});
+
+</script>
+
+</body>
+</html>
